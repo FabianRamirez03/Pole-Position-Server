@@ -1,0 +1,3 @@
+C:/Users/ramir/CLionProjects/Pole Position Server/cmake-build-debug/CMakeFiles/Pole_Position_Server.dir
+C:/Users/ramir/CLionProjects/Pole Position Server/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/ramir/CLionProjects/Pole Position Server/cmake-build-debug/CMakeFiles/rebuild_cache.dir
