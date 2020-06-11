@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/abiga/OneDrive/Escritorio/Pole-Position-Server/main.c
+stdio.h
+-
+windows.h
+-
+stdlib.h
+-
+stdio.h
+-
+winsock.h
+-
+stdbool.h
+-
+
