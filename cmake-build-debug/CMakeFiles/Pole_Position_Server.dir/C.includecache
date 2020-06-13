@@ -19,4 +19,10 @@ winsock.h
 -
 stdbool.h
 -
+unistd.h
+-
+errno.h
+-
+stdio.h
+-
 

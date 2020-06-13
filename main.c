@@ -4,6 +4,9 @@
 #include <stdio.h>
 #include <winsock.h>
 #include <stdbool.h>
+#include <unistd.h>
+#include <errno.h>
+#include <stdio.h>
 
 // our thread for recving commands
 DWORD WINAPI receive_cmds(LPVOID lpParam)
@@ -18,12 +21,14 @@ DWORD WINAPI receive_cmds(LPVOID lpParam)
     char sendData[100];
     // for error checking
     int res;
-
+    int responseInt;
+    char response[100];
 
     // our recv loop
-    while(true)
-    {
+
         res = recv(current_client,buf,sizeof(buf),0); // recv cmds
+        printf ("%s\n", buf);
+
 
         Sleep(10);
 
@@ -35,9 +40,9 @@ DWORD WINAPI receive_cmds(LPVOID lpParam)
         }
 
 
-            printf("%s", buf);
 
-            strcpy(sendData,"Received Hello\n");
+            strcpy(sendData,"Hello\n");
+    printf ("%s\n", sendData);
             Sleep(10);
             send(current_client,sendData,sizeof(sendData),0);
 
@@ -45,7 +50,7 @@ DWORD WINAPI receive_cmds(LPVOID lpParam)
         // clear buffers
         strcpy(sendData,"");
         strcpy(buf,"");
-    }
+
 
 
 }
@@ -72,7 +77,7 @@ int main() {
     // fill in winsock struct ...
     server.sin_family=AF_INET;
     server.sin_addr.s_addr=INADDR_ANY;
-    server.sin_port=htons(123); // listen on telnet port 23
+    server.sin_port=htons(25557);
 
     // create our socket
     sock=socket(AF_INET,SOCK_STREAM,0);
@@ -82,7 +87,7 @@ int main() {
         return 0;
     }
 
-    // bind our socket to a port(port 123)
+    // bind our socket to a port
     if( bind(sock,(struct sockaddr*)&server,sizeof(server)) !=0 )
     {
         return 0;
