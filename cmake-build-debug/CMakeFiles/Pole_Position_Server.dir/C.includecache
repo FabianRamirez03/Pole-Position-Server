@@ -6,7 +6,15 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/abiga/OneDrive/Escritorio/Pole-Position-Server/main.c
+C:/Users/ramir/CLionProjects/Pole Position Server/CarsInfo.c
+
+C:/Users/ramir/CLionProjects/Pole Position Server/Util.c
+stdio.h
+-
+string.h
+-
+
+C:/Users/ramir/CLionProjects/Pole Position Server/main.c
 stdio.h
 -
 windows.h
@@ -25,4 +33,8 @@ errno.h
 -
 stdio.h
 -
+CarsInfo.c
+C:/Users/ramir/CLionProjects/Pole Position Server/CarsInfo.c
+Util.c
+C:/Users/ramir/CLionProjects/Pole Position Server/Util.c
 

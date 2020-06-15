@@ -4,7 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/abiga/OneDrive/Escritorio/Pole-Position-Server/main.c" "C:/Users/abiga/OneDrive/Escritorio/Pole-Position-Server/cmake-build-debug/CMakeFiles/Pole_Position_Server.dir/main.c.obj"
+  "C:/Users/ramir/CLionProjects/Pole Position Server/CarsInfo.c" "C:/Users/ramir/CLionProjects/Pole Position Server/cmake-build-debug/CMakeFiles/Pole_Position_Server.dir/CarsInfo.c.obj"
+  "C:/Users/ramir/CLionProjects/Pole Position Server/Util.c" "C:/Users/ramir/CLionProjects/Pole Position Server/cmake-build-debug/CMakeFiles/Pole_Position_Server.dir/Util.c.obj"
+  "C:/Users/ramir/CLionProjects/Pole Position Server/main.c" "C:/Users/ramir/CLionProjects/Pole Position Server/cmake-build-debug/CMakeFiles/Pole_Position_Server.dir/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

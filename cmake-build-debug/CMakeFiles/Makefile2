@@ -43,10 +43,10 @@ RM = "C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\abiga\OneDrive\Escritorio\Pole-Position-Server
+CMAKE_SOURCE_DIR = "C:\Users\ramir\CLionProjects\Pole Position Server"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\abiga\OneDrive\Escritorio\Pole-Position-Server\cmake-build-debug
+CMAKE_BINARY_DIR = "C:\Users\ramir\CLionProjects\Pole Position Server\cmake-build-debug"
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -73,14 +73,14 @@ clean: CMakeFiles/Pole_Position_Server.dir/clean
 CMakeFiles/Pole_Position_Server.dir/all:
 	$(MAKE) -f CMakeFiles\Pole_Position_Server.dir\build.make CMakeFiles/Pole_Position_Server.dir/depend
 	$(MAKE) -f CMakeFiles\Pole_Position_Server.dir\build.make CMakeFiles/Pole_Position_Server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\abiga\OneDrive\Escritorio\Pole-Position-Server\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target Pole_Position_Server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\ramir\CLionProjects\Pole Position Server\cmake-build-debug\CMakeFiles" --progress-num=1,2,3,4 "Built target Pole_Position_Server"
 .PHONY : CMakeFiles/Pole_Position_Server.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Pole_Position_Server.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\abiga\OneDrive\Escritorio\Pole-Position-Server\cmake-build-debug\CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\ramir\CLionProjects\Pole Position Server\cmake-build-debug\CMakeFiles" 4
 	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/Pole_Position_Server.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\abiga\OneDrive\Escritorio\Pole-Position-Server\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\ramir\CLionProjects\Pole Position Server\cmake-build-debug\CMakeFiles" 0
 .PHONY : CMakeFiles/Pole_Position_Server.dir/rule
 
 # Convenience name for target.

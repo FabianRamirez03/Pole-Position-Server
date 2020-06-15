@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Pole_Position_Server.dir/CarsInfo.c.obj"
+  "CMakeFiles/Pole_Position_Server.dir/Util.c.obj"
   "CMakeFiles/Pole_Position_Server.dir/main.c.obj"
   "Pole_Position_Server.exe"
   "Pole_Position_Server.exe.manifest"

@@ -42,10 +42,10 @@ RM = "C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\abiga\OneDrive\Escritorio\Pole-Position-Server
+CMAKE_SOURCE_DIR = "C:\Users\ramir\CLionProjects\Pole Position Server"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\abiga\OneDrive\Escritorio\Pole-Position-Server\cmake-build-debug
+CMAKE_BINARY_DIR = "C:\Users\ramir\CLionProjects\Pole Position Server\cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Pole_Position_Server.dir/depend.make
@@ -58,30 +58,60 @@ include CMakeFiles/Pole_Position_Server.dir/flags.make
 
 CMakeFiles/Pole_Position_Server.dir/main.c.obj: CMakeFiles/Pole_Position_Server.dir/flags.make
 CMakeFiles/Pole_Position_Server.dir/main.c.obj: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\abiga\OneDrive\Escritorio\Pole-Position-Server\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Pole_Position_Server.dir/main.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Pole_Position_Server.dir\main.c.obj   -c C:\Users\abiga\OneDrive\Escritorio\Pole-Position-Server\main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\ramir\CLionProjects\Pole Position Server\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Pole_Position_Server.dir/main.c.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Pole_Position_Server.dir\main.c.obj   -c "C:\Users\ramir\CLionProjects\Pole Position Server\main.c"
 
 CMakeFiles/Pole_Position_Server.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Pole_Position_Server.dir/main.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\abiga\OneDrive\Escritorio\Pole-Position-Server\main.c > CMakeFiles\Pole_Position_Server.dir\main.c.i
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\ramir\CLionProjects\Pole Position Server\main.c" > CMakeFiles\Pole_Position_Server.dir\main.c.i
 
 CMakeFiles/Pole_Position_Server.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Pole_Position_Server.dir/main.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\abiga\OneDrive\Escritorio\Pole-Position-Server\main.c -o CMakeFiles\Pole_Position_Server.dir\main.c.s
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\ramir\CLionProjects\Pole Position Server\main.c" -o CMakeFiles\Pole_Position_Server.dir\main.c.s
+
+CMakeFiles/Pole_Position_Server.dir/CarsInfo.c.obj: CMakeFiles/Pole_Position_Server.dir/flags.make
+CMakeFiles/Pole_Position_Server.dir/CarsInfo.c.obj: ../CarsInfo.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\ramir\CLionProjects\Pole Position Server\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Pole_Position_Server.dir/CarsInfo.c.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Pole_Position_Server.dir\CarsInfo.c.obj   -c "C:\Users\ramir\CLionProjects\Pole Position Server\CarsInfo.c"
+
+CMakeFiles/Pole_Position_Server.dir/CarsInfo.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Pole_Position_Server.dir/CarsInfo.c.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\ramir\CLionProjects\Pole Position Server\CarsInfo.c" > CMakeFiles\Pole_Position_Server.dir\CarsInfo.c.i
+
+CMakeFiles/Pole_Position_Server.dir/CarsInfo.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Pole_Position_Server.dir/CarsInfo.c.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\ramir\CLionProjects\Pole Position Server\CarsInfo.c" -o CMakeFiles\Pole_Position_Server.dir\CarsInfo.c.s
+
+CMakeFiles/Pole_Position_Server.dir/Util.c.obj: CMakeFiles/Pole_Position_Server.dir/flags.make
+CMakeFiles/Pole_Position_Server.dir/Util.c.obj: ../Util.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\ramir\CLionProjects\Pole Position Server\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Pole_Position_Server.dir/Util.c.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Pole_Position_Server.dir\Util.c.obj   -c "C:\Users\ramir\CLionProjects\Pole Position Server\Util.c"
+
+CMakeFiles/Pole_Position_Server.dir/Util.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Pole_Position_Server.dir/Util.c.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\ramir\CLionProjects\Pole Position Server\Util.c" > CMakeFiles\Pole_Position_Server.dir\Util.c.i
+
+CMakeFiles/Pole_Position_Server.dir/Util.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Pole_Position_Server.dir/Util.c.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\ramir\CLionProjects\Pole Position Server\Util.c" -o CMakeFiles\Pole_Position_Server.dir\Util.c.s
 
 # Object files for target Pole_Position_Server
 Pole_Position_Server_OBJECTS = \
-"CMakeFiles/Pole_Position_Server.dir/main.c.obj"
+"CMakeFiles/Pole_Position_Server.dir/main.c.obj" \
+"CMakeFiles/Pole_Position_Server.dir/CarsInfo.c.obj" \
+"CMakeFiles/Pole_Position_Server.dir/Util.c.obj"
 
 # External object files for target Pole_Position_Server
 Pole_Position_Server_EXTERNAL_OBJECTS =
 
 Pole_Position_Server.exe: CMakeFiles/Pole_Position_Server.dir/main.c.obj
+Pole_Position_Server.exe: CMakeFiles/Pole_Position_Server.dir/CarsInfo.c.obj
+Pole_Position_Server.exe: CMakeFiles/Pole_Position_Server.dir/Util.c.obj
 Pole_Position_Server.exe: CMakeFiles/Pole_Position_Server.dir/build.make
 Pole_Position_Server.exe: CMakeFiles/Pole_Position_Server.dir/linklibs.rsp
 Pole_Position_Server.exe: CMakeFiles/Pole_Position_Server.dir/objects1.rsp
 Pole_Position_Server.exe: CMakeFiles/Pole_Position_Server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\abiga\OneDrive\Escritorio\Pole-Position-Server\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable Pole_Position_Server.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\ramir\CLionProjects\Pole Position Server\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable Pole_Position_Server.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Pole_Position_Server.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -94,6 +124,6 @@ CMakeFiles/Pole_Position_Server.dir/clean:
 .PHONY : CMakeFiles/Pole_Position_Server.dir/clean
 
 CMakeFiles/Pole_Position_Server.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\abiga\OneDrive\Escritorio\Pole-Position-Server C:\Users\abiga\OneDrive\Escritorio\Pole-Position-Server C:\Users\abiga\OneDrive\Escritorio\Pole-Position-Server\cmake-build-debug C:\Users\abiga\OneDrive\Escritorio\Pole-Position-Server\cmake-build-debug C:\Users\abiga\OneDrive\Escritorio\Pole-Position-Server\cmake-build-debug\CMakeFiles\Pole_Position_Server.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\ramir\CLionProjects\Pole Position Server" "C:\Users\ramir\CLionProjects\Pole Position Server" "C:\Users\ramir\CLionProjects\Pole Position Server\cmake-build-debug" "C:\Users\ramir\CLionProjects\Pole Position Server\cmake-build-debug" "C:\Users\ramir\CLionProjects\Pole Position Server\cmake-build-debug\CMakeFiles\Pole_Position_Server.dir\DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/Pole_Position_Server.dir/depend
 

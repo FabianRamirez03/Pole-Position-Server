@@ -47,10 +47,10 @@ RM = "C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\abiga\OneDrive\Escritorio\Pole-Position-Server
+CMAKE_SOURCE_DIR = "C:\Users\ramir\CLionProjects\Pole Position Server"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\abiga\OneDrive\Escritorio\Pole-Position-Server\cmake-build-debug
+CMAKE_BINARY_DIR = "C:\Users\ramir\CLionProjects\Pole Position Server\cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\abiga\OneDrive\Escritorio\Pole-Position-Server\cmake-build-debug\CMakeFiles C:\Users\abiga\OneDrive\Escritorio\Pole-Position-Server\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\ramir\CLionProjects\Pole Position Server\cmake-build-debug\CMakeFiles" "C:\Users\ramir\CLionProjects\Pole Position Server\cmake-build-debug\CMakeFiles\progress.marks"
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\abiga\OneDrive\Escritorio\Pole-Position-Server\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\ramir\CLionProjects\Pole Position Server\cmake-build-debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -122,6 +122,60 @@ Pole_Position_Server/fast:
 	$(MAKE) -f CMakeFiles\Pole_Position_Server.dir\build.make CMakeFiles/Pole_Position_Server.dir/build
 .PHONY : Pole_Position_Server/fast
 
+CarsInfo.obj: CarsInfo.c.obj
+
+.PHONY : CarsInfo.obj
+
+# target to build an object file
+CarsInfo.c.obj:
+	$(MAKE) -f CMakeFiles\Pole_Position_Server.dir\build.make CMakeFiles/Pole_Position_Server.dir/CarsInfo.c.obj
+.PHONY : CarsInfo.c.obj
+
+CarsInfo.i: CarsInfo.c.i
+
+.PHONY : CarsInfo.i
+
+# target to preprocess a source file
+CarsInfo.c.i:
+	$(MAKE) -f CMakeFiles\Pole_Position_Server.dir\build.make CMakeFiles/Pole_Position_Server.dir/CarsInfo.c.i
+.PHONY : CarsInfo.c.i
+
+CarsInfo.s: CarsInfo.c.s
+
+.PHONY : CarsInfo.s
+
+# target to generate assembly for a file
+CarsInfo.c.s:
+	$(MAKE) -f CMakeFiles\Pole_Position_Server.dir\build.make CMakeFiles/Pole_Position_Server.dir/CarsInfo.c.s
+.PHONY : CarsInfo.c.s
+
+Util.obj: Util.c.obj
+
+.PHONY : Util.obj
+
+# target to build an object file
+Util.c.obj:
+	$(MAKE) -f CMakeFiles\Pole_Position_Server.dir\build.make CMakeFiles/Pole_Position_Server.dir/Util.c.obj
+.PHONY : Util.c.obj
+
+Util.i: Util.c.i
+
+.PHONY : Util.i
+
+# target to preprocess a source file
+Util.c.i:
+	$(MAKE) -f CMakeFiles\Pole_Position_Server.dir\build.make CMakeFiles/Pole_Position_Server.dir/Util.c.i
+.PHONY : Util.c.i
+
+Util.s: Util.c.s
+
+.PHONY : Util.s
+
+# target to generate assembly for a file
+Util.c.s:
+	$(MAKE) -f CMakeFiles\Pole_Position_Server.dir\build.make CMakeFiles/Pole_Position_Server.dir/Util.c.s
+.PHONY : Util.c.s
+
 main.obj: main.c.obj
 
 .PHONY : main.obj
@@ -158,6 +212,12 @@ help:
 	@echo ... Pole_Position_Server
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... CarsInfo.obj
+	@echo ... CarsInfo.i
+	@echo ... CarsInfo.s
+	@echo ... Util.obj
+	@echo ... Util.i
+	@echo ... Util.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

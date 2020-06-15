@@ -7,9 +7,14 @@
 #include <unistd.h>
 #include <errno.h>
 #include <stdio.h>
+#include "CarsInfo.c"
+#include "Util.c"
+
 
 // our thread for recving commands
 DWORD WINAPI receive_cmds(LPVOID lpParam)
+
+
 {
 // set our socket to the socket passed in as a parameter
     SOCKET current_client = (SOCKET)lpParam;
@@ -23,33 +28,71 @@ DWORD WINAPI receive_cmds(LPVOID lpParam)
     int res;
     int responseInt;
     char response[100];
+    //Listas de informacion de cada vehiculo
+    //[name, posX, posY, scaleX, scaleY, speed]
+    char car1Info[6][20];
+    char car2Info[6][20];
+
+
+
+
+
+
+    //struct CarsInfo car1;
 
     // our recv loop
 
-        res = recv(current_client,buf,sizeof(buf),0); // recv cmds
-        printf ("%s\n", buf);
+    res = recv(current_client,buf,sizeof(buf),0); // recv cmds
+    char bufCopy[50];
+    strcpy(bufCopy, buf);
 
+    printf ("%s\n", bufCopy);
 
-        Sleep(10);
+    //Define cual de los dos carros envio informacion y la almacena en una lista
+    char *token = strtok(bufCopy, ",");
+    int result;
+    int cont = 0;
+    result = strcmp(token, "blue");
 
-        if(res == 0)
-        {
-            MessageBox(0,"error","error",MB_OK);
-            closesocket(current_client);
-            ExitThread(0);
+    if (result == 0){
+        while (token != NULL) {
+            strcpy(car1Info[cont], token);
+            token = strtok(NULL, ",");
+            cont++;
         }
+    }else{
+        while (token != NULL) {
+            strcpy(car2Info[cont], token);
+            token = strtok(NULL, ",");
+            cont++;
+        }
+    }
+    cont = 0;
 
 
 
-            strcpy(sendData,"Hello\n");
-    printf ("%s\n", sendData);
-            Sleep(10);
-            send(current_client,sendData,sizeof(sendData),0);
 
 
-        // clear buffers
-        strcpy(sendData,"");
-        strcpy(buf,"");
+
+    Sleep(10);
+    if(res == 0)
+    {
+        MessageBox(0,"error","error",MB_OK);
+        closesocket(current_client);
+        ExitThread(0);
+    }
+
+
+
+    strcpy(sendData,"Soy el server\n");
+    //printf ("%s\n", sendData); //lo qhe dice el server
+    Sleep(10);
+    send(current_client,sendData,sizeof(sendData),0);
+
+
+    // clear buffers
+    strcpy(sendData,"");
+    strcpy(buf,"");
 
 
 
@@ -67,7 +110,7 @@ int main() {
     struct sockaddr_in server;
 
     // start winsock
-    int ret = WSAStartup(0x101,&wsaData); // use highest version of winsock avalible
+    int ret = WSAStartup(0x101,&wsaData); // use highest version of winsock available
 
     if(ret != 0)
     {

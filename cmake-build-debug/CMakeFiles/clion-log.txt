@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\abiga\OneDrive\Escritorio\Pole-Position-Server
+"C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "C:\Users\ramir\CLionProjects\Pole Position Server"
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/abiga/OneDrive/Escritorio/Pole-Position-Server/cmake-build-debug
+-- Build files have been written to: C:/Users/ramir/CLionProjects/Pole Position Server/cmake-build-debug
