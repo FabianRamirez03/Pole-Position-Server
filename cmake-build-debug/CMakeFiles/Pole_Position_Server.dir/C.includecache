@@ -19,19 +19,11 @@ stdio.h
 -
 windows.h
 -
-stdlib.h
--
-stdio.h
--
 winsock.h
 -
 stdbool.h
 -
-unistd.h
--
 errno.h
--
-stdio.h
 -
 CarsInfo.c
 C:/Users/ramir/CLionProjects/Pole Position Server/CarsInfo.c

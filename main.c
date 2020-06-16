@@ -1,17 +1,13 @@
 #include <stdio.h>
 #include <windows.h>
-#include  <stdlib.h>
-#include <stdio.h>
 #include <winsock.h>
 #include <stdbool.h>
-#include <unistd.h>
 #include <errno.h>
-#include <stdio.h>
 #include "CarsInfo.c"
 #include "Util.c"
 
 
-// our thread for recving commands
+// our thread for receiving commands
 DWORD WINAPI receive_cmds(LPVOID lpParam)
 
 
@@ -23,7 +19,7 @@ DWORD WINAPI receive_cmds(LPVOID lpParam)
     // buffer to hold our recived data
     char buf[100];
     // buffer to hold our sent data
-    char sendData[100];
+    char sendData[100] = "wait\n";
     // for error checking
     int res;
     int responseInt;
@@ -32,6 +28,7 @@ DWORD WINAPI receive_cmds(LPVOID lpParam)
     //[name, posX, posY, scaleX, scaleY, speed]
     char car1Info[6][20];
     char car2Info[6][20];
+
 
 
 
@@ -48,11 +45,12 @@ DWORD WINAPI receive_cmds(LPVOID lpParam)
 
     printf ("%s\n", bufCopy);
 
-    //Define cual de los dos carros envio informacion y la almacena en una lista
+    //Define cual de los dos carros envió informacion y la almacena en una lista
     char *token = strtok(bufCopy, ",");
     int result;
     int cont = 0;
     result = strcmp(token, "blue");
+    int isReady = 1;
 
     if (result == 0){
         while (token != NULL) {
@@ -60,7 +58,19 @@ DWORD WINAPI receive_cmds(LPVOID lpParam)
             token = strtok(NULL, ",");
             cont++;
         }
-    }else{
+        char str[100];
+        strcpy(str, car2Info[0]);
+        cont = 1;
+        while (cont < 6){
+            strcat(str, ",");
+            strcat(str, car2Info[cont]);
+            cont++;
+        }
+        strcat(str, "\n");
+        strcpy(sendData, str);
+        cont = 0;
+    }
+    else{
         while (token != NULL) {
             strcpy(car2Info[cont], token);
             token = strtok(NULL, ",");
@@ -68,7 +78,11 @@ DWORD WINAPI receive_cmds(LPVOID lpParam)
         }
     }
     cont = 0;
-
+    token = strtok(sendData, ",");
+    isReady = strcmp(sendData, ",,,,,\n");
+    if(isReady == 0){
+        strcpy(sendData, "wait");
+    }
 
 
 
@@ -83,9 +97,8 @@ DWORD WINAPI receive_cmds(LPVOID lpParam)
     }
 
 
-
-    strcpy(sendData,"Soy el server\n");
-    //printf ("%s\n", sendData); //lo qhe dice el server
+    //strcpy(sendData,"Soy el server\n");
+    printf ("%s\n", sendData); //lo qhe dice el server
     Sleep(10);
     send(current_client,sendData,sizeof(sendData),0);
 
