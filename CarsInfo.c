@@ -4,10 +4,10 @@
 
 struct Car{
     char name[50];
-    int x;
-    int y;
-    int speed;
-    int width;
-    int height;
-    int distance;
+    char x;
+    char y;
+    char speed;
+    char width;
+    char height;
+    char distance;
 };

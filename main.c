@@ -5,6 +5,7 @@
 #include <errno.h>
 #include "CarsInfo.c"
 #include "Util.c"
+#define BUZZ_SIZE 1024
 
 
 // our thread for receiving commands
@@ -19,23 +20,22 @@ DWORD WINAPI receive_cmds(LPVOID lpParam)
     // buffer to hold our recived data
     char buf[100];
     // buffer to hold our sent data
-    char sendData[100] = "wait\n";
+    char sendData[100];
     // for error checking
     int res;
     int responseInt;
     char response[100];
     //Listas de informacion de cada vehiculo
+
     //[name, posX, posY, scaleX, scaleY, speed]
-    char car1Info[6][20];
-    char car2Info[6][20];
+    char carBlueInfo[6][20];
+
+
+    FILE *fileToWrite;
+    FILE *fileToRead;
 
 
 
-
-
-
-
-    //struct CarsInfo car1;
 
     // our recv loop
 
@@ -43,49 +43,53 @@ DWORD WINAPI receive_cmds(LPVOID lpParam)
     char bufCopy[50];
     strcpy(bufCopy, buf);
 
-    printf ("%s\n", bufCopy);
+    printf ("Client says: %s\n", buf);
 
     //Define cual de los dos carros envió informacion y la almacena en una lista
     char *token = strtok(bufCopy, ",");
     int result;
-    int cont = 0;
-    result = strcmp(token, "blue");
     int isReady = 1;
 
-    if (result == 0){
-        while (token != NULL) {
-            strcpy(car1Info[cont], token);
-            token = strtok(NULL, ",");
-            cont++;
-        }
-        char str[100];
-        strcpy(str, car2Info[0]);
-        cont = 1;
-        while (cont < 6){
-            strcat(str, ",");
-            strcat(str, car2Info[cont]);
-            cont++;
-        }
-        strcat(str, "\n");
-        strcpy(sendData, str);
-        cont = 0;
+
+    //En caso de que la informacion recibida sea del carro rojo
+    result = strcmp(token, "red");
+    if(result == 0){
+        fileToWrite = fopen("infoRedCar.txt","w");
+        fprintf(fileToWrite, "%s", buf);
+        fclose(fileToWrite);
+        char buff[BUZZ_SIZE];
+        fileToRead = fopen("infoBlueCar.txt", "r");
+        fgets(buff, BUZZ_SIZE, fileToRead);
+        strcpy(sendData, strcat(buff, "\n"));
+        fclose(fileToRead);
     }
-    else{
-        while (token != NULL) {
-            strcpy(car2Info[cont], token);
-            token = strtok(NULL, ",");
-            cont++;
-        }
+    //en caso de que la informacion ingresada sea del carro azul
+    result = strcmp(token, "blue");
+    if(result == 0){
+        fileToWrite = fopen("infoBlueCar.txt","w");
+        fprintf(fileToWrite, "%s", buf);
+        fclose(fileToWrite);
+        char buff[BUZZ_SIZE];
+        fileToRead = fopen("infoRedCar.txt", "r");
+        fgets(buff, BUZZ_SIZE, fileToRead);
+        strcpy(sendData, strcat(buff, "\n"));
+        fclose(fileToRead);
     }
-    cont = 0;
-    token = strtok(sendData, ",");
-    isReady = strcmp(sendData, ",,,,,\n");
+    result = strcmp(token, "bye");
+    if(result == 0){
+        printf("Terminado\n");
+        fileToWrite = fopen("infoBlueCar.txt","w");
+        fprintf(fileToWrite, "%s", "wait\n");
+        fclose(fileToWrite);
+        fileToRead = fopen("infoRedCar.txt","w");
+        fprintf(fileToWrite, "%s", "wait\n");
+        fclose(fileToRead);
+    }
+
+    isReady = strcmp(sendData, "\0");
     if(isReady == 0){
-        strcpy(sendData, "wait");
+        strcpy(sendData, "wait\n");
     }
-
-
-
 
 
     Sleep(10);
@@ -98,7 +102,7 @@ DWORD WINAPI receive_cmds(LPVOID lpParam)
 
 
     //strcpy(sendData,"Soy el server\n");
-    printf ("%s\n", sendData); //lo qhe dice el server
+    printf ("Server says: %s\n", sendData); //lo qhe dice el server
     Sleep(10);
     send(current_client,sendData,sizeof(sendData),0);
 
